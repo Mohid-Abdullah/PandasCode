@@ -1,10 +1,12 @@
 import pandas as pd
 import kagglehub
+import os
 
 #Reading DataSet
 path = kagglehub.dataset_download("prevek18/ames-housing-dataset")
 print("Path to dataset files:", path)
-df = pd.read_csv('AmesHousing.csv')
+ds_path = os.path.join(path, "AmesHousing.csv")
+df = pd.read_csv(ds_path)
 
 # Show basic info
 print(df.shape)
